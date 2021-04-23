@@ -5,3 +5,5 @@ ggggggg
 
 qqqqqqqqsss
 ttttttt
+
+this.name = swg
