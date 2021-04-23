@@ -1,5 +1,5 @@
 # vue_shop
-
+# swg project
 ## Project setup
 ```
 npm install
