@@ -106,7 +106,7 @@
 
         <el-form-item label="角色描述">
           <el-input v-model="addRoleForm.roleDesc"></el-input>
-        </el-form-item>
+        </el-form-item>git
 
         <el-form-item label="角色id">
           <el-input v-model="addRoleForm.id"></el-input>
@@ -276,10 +276,10 @@ export default {
   margin: 7px;
 }
 .bdtop {
-  border: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 .bdbottom {
-  border: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 .vcenter {
   display: flex;
