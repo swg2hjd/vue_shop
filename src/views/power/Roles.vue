@@ -276,6 +276,7 @@ export default {
   margin: 7px;
 }
 .bdtop {
+  // 修复权限标签的布局bug’
   border-top: 1px solid #eee;
 }
 .bdbottom {
