@@ -192,7 +192,13 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="editDialogVisible = false">取 消</el-button>
+        <el-button
+          @click="
+            $message.info('取消修改');
+            editDialogVisible = false;
+          "
+          >取 消</el-button
+        >
         <el-button type="primary" @click="eidtUserInfo">确 定</el-button>
       </span>
     </el-dialog>
@@ -414,7 +420,7 @@ export default {
           return this.$message.error("修改用户数据失败");
         this.$message.success("修改用户数据成功");
         // 关闭修改用户对话框
-        this.editDialogVisible = !this.editDialogVisible;
+        this.editDialogVisible = false;
         // 更新修改后的用户列表
         this.getUserList();
       });
