@@ -106,7 +106,7 @@
 
         <el-form-item label="角色描述">
           <el-input v-model="addRoleForm.roleDesc"></el-input>
-        </el-form-item>git
+        </el-form-item>
 
         <el-form-item label="角色id">
           <el-input v-model="addRoleForm.id"></el-input>
