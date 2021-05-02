@@ -10,6 +10,10 @@ import TreeTable from 'vue-table-with-tree-grid'
 Vue.prototype.$http = axios
 Vue.use(ElementUI)
 axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+const instance1 = axios.create({
+  baseURL: 'http://localhost:3000/'
+})
+Vue.prototype.$http2 = instance1
 // 请求拦截
 axios.interceptors.request.use(config => {
   // console.log(config)

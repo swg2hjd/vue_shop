@@ -244,7 +244,7 @@ export default {
       onlyTableData: [],
       // 控制添加对话框的显示与隐藏
       addDialogVisible: false,
-      // 添加参数表单对象
+      // 添加参数表单对象 
       addForm: {
         attr_name: "",
       },
