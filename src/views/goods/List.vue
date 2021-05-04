@@ -113,7 +113,7 @@
       width="50%"
       @close="editDialogClosed"
     >
-    <!-- 编辑商品表单 -->
+      <!-- 编辑商品表单 -->
       <el-form
         :model="editGoodsForm"
         :rules="editGoodsFormRules"
@@ -135,14 +135,12 @@
         <el-form-item label="商品重量" prop="goods_weight">
           <el-input v-model="editGoodsForm.goods_weight"></el-input>
         </el-form-item>
-
       </el-form>
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="editGoods">确 定</el-button>
       </span>
-
     </el-dialog>
 
     <!-- 添加商品对话框 -->
@@ -152,7 +150,7 @@
       width="50%"
       @close="addGoodsFormClosed"
     >
-    <!-- 添加商品表单 -->
+      <!-- 添加商品表单 -->
       <el-form
         :model="addGoodsForm"
         :rules="addGoodsFormRules"
@@ -170,14 +168,12 @@
         <el-form-item label="商品重量" prop="goods_weight">
           <el-input v-model="addGoodsForm.goods_weight"></el-input>
         </el-form-item>
-
       </el-form>
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="addGoodsFormDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="addGoods">确 定</el-button>
       </span>
-
     </el-dialog>
   </div>
 </template>

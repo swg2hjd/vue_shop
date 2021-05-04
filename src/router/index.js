@@ -9,8 +9,8 @@ const Roles = () => import('../views/power/Roles')
 const Cate = () => import('../views/goods/Cate')
 const Params = () => import('../views/goods/Params')
 const List = () => import('../views/goods/List')
-const Order = ()=>import('../views/order/Order')
-const Report = ()=>import('../views/report/Report')
+const Order = () => import('../views/order/Order')
+const Report = () => import('../views/report/Report')
 
 Vue.use(VueRouter)
 

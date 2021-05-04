@@ -127,7 +127,13 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="$message.info('取消编辑');editCateDialogVisible = false">取 消</el-button>
+        <el-button
+          @click="
+            $message.info('取消编辑');
+            editCateDialogVisible = false;
+          "
+          >取 消</el-button
+        >
         <el-button type="primary" @click="editCateInfo">确 定</el-button>
       </span>
     </el-dialog>
