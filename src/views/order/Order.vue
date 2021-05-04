@@ -54,7 +54,7 @@
           </template>
         </el-table-column>
         <el-table-column align="center" prop="prop" label="操作">
-          <template slot-scope="scope">
+          <template>
             <el-button
               type="primary"
               icon="el-icon-edit"
