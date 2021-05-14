@@ -50,15 +50,9 @@ Vue.filter('dateFormat', (originVal) => {
   const mm = (date.getMinutes() + '').padStart(2, '0')
   const ss = (date.getSeconds() + '').padStart(2, '0')
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
-
-
-  return y - m - d
-
-
 })
 // 全局注册组件
 Vue.component('tree-table', TreeTable)
-
 new Vue({
   router,
   store,

@@ -91,11 +91,6 @@ export default {
         if (res.meta.status !== 200) {
           return this.$message.error("登录失败");
         }
-        // return this.$message({
-        //   message:'登陆成功',
-        //   type:'success'
-        // })
-        console.log(res);
         this.$message.success("登陆成功");
         // 保存token
         window.sessionStorage.setItem("token", res.data.token);

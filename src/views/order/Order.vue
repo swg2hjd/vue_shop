@@ -199,7 +199,6 @@ export default {
       const { data: res } = await this.$http.get("orders", {
         params: this.queryInfo,
       });
-      console.log(res);
       if (res.meta.status !== 200)
         return this.$message.error("获取订单列表失败");
       this.total = res.data.total;
@@ -226,7 +225,6 @@ export default {
 
     async showProgressBox() {
       const { data: res } = await this.$http.get(`kuaidi/804909574412544580`);
-      // console.log(res);
       if (res.meta.status !== 200) return this.$message.error("获取数据失败");
       this.progressInfo = res.data;
       this.progressDialogVisible = true;

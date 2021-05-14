@@ -185,7 +185,6 @@ export default {
     // 点击确定添加角色
     async addRole() {
       const { data: res } = await this.$http.post(`roles`, this.addRoleForm);
-      console.log(res);
       if (res.meta.status !== 201) return this.$message.error(res.meta.msg);
       this.addRoleDialogVisible = !this.addRoleDialogVisible;
     },
@@ -224,7 +223,6 @@ export default {
       this.roleId = role.id;
       // 获取权限数据
       const { data: res } = await this.$http.get("rights/tree");
-      console.log(res);
       if (res.meta.status !== 200)
         return this.$message.error("获取权限数据失败");
       this.rightsList = res.data;
@@ -253,14 +251,12 @@ export default {
         ...this.$refs.treeRef.getHalfCheckedKeys(),
       ];
       const idStr = keys.join(",");
-      console.log(idStr);
       const { data: res } = await this.$http.post(
         `roles/${this.roleId}/rights`,
         {
           rids: idStr,
         }
       );
-      // console.log(res);
       if (res.meta.status !== 200) return this.$message.error("分配权限失败");
       this.$message.success("分配权限成功");
       // 刷新角色列表

@@ -344,7 +344,6 @@ export default {
       this.$message.success("获取用户列表成功");
       this.userList = res.data.users;
       this.total = res.data.total;
-      console.log(res);
     },
 
     // 监听pagesize改变

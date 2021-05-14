@@ -95,7 +95,6 @@ export default {
       const { data: res } = await this.$http.get("menus");
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
       this.menuList = res.data;
-      console.log(res);
     },
     // 使用then方式获取服务器传回的数据
     // getMenuList(){
