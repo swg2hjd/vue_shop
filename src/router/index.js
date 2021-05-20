@@ -11,6 +11,10 @@ const Params = () => import('../views/goods/Params')
 const List = () => import('../views/goods/List')
 const Order = () => import('../views/order/Order')
 const Report = () => import('../views/report/Report')
+const TestTable = () => import('../views/testTable/TestTable')
+const TestTable2 = () => import('../views/testTable/TestTable2')
+const NavMenu = () => import('../views/NavMenu/NavMenu')
+
 
 Vue.use(VueRouter)
 
@@ -20,6 +24,18 @@ const routes = [
     redirect: '/login'
   },
 
+  {
+    path: '/testtable',
+    component:TestTable
+  },
+  {
+    path: '/testtable2',
+    component: TestTable2
+  },
+  {
+    path: '/navmenu',
+    component: NavMenu
+  },
   {
     path: '/login',
     name: 'Login',
