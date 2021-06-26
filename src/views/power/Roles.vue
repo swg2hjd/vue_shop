@@ -36,7 +36,7 @@
               <el-col :span="19">
                 <!-- 渲染二级 -->
                 <el-row
-                  :class="[i2 === 0 ? '' : 'bdtop', 'vcenter']"
+                  :class="[i2 === 0 ? '' : 'bd ', 'vcenter']"
                   v-for="(item2, i2) in item1.children"
                   :key="i2"
                 >
