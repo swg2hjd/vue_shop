@@ -232,6 +232,7 @@
 </template>
 
 <script>
+import { getUserLists,saveRoleInfos } from "../../http/api/api.js";
 export default {
   data() {
     // 自定义邮箱验证规则
@@ -335,13 +336,25 @@ export default {
     };
   },
   methods: {
+    // async getUserList() {
+    //   const { data: res } = await this.$http.get("users", {
+    //     params: this.queryInfo,
+    //   });
+
+    //   if (res.meta.status !== 200)
+    //     return this.$message.error("获取用户列表失败");
+    //   this.$message.success("获取用户列表成功");
+    //   console.log(res)
+    //   this.userList = res.data.users;
+    //   this.total = res.data.total;
+    // },
+
     async getUserList() {
-      const { data: res } = await this.$http.get("users", {
-        params: this.queryInfo,
-      });
+      const { data: res } = await getUserLists(this.queryInfo);
       if (res.meta.status !== 200)
         return this.$message.error("获取用户列表失败");
       this.$message.success("获取用户列表成功");
+      console.log(res);
       this.userList = res.data.users;
       this.total = res.data.total;
     },
@@ -370,7 +383,7 @@ export default {
       this.$message.success("更新用户状态成功");
     },
 
-    // 监听添加用户对话框的关闭事件  
+    // 监听添加用户对话框的关闭事件
     addDialogClosed() {
       this.$refs.addFormRef.resetFields();
     },
@@ -461,16 +474,26 @@ export default {
       this.setRoleDialogVisible = true;
     },
 
-    // 点击确定按钮分配角色
-    async saveRoleInfo() {
-      if (!this.selectedRoleId)
-        return this.$message.error("请选择要分配的新角色");
-      const { data: res } = await this.$http.put(
-        `users/${this.userInfo.id}/role`,
-        {
-          rid: this.selectedRoleId,
-        }
-      );
+    //点击确定按钮分配角色
+    // async saveRoleInfo() {
+    //   if (!this.selectedRoleId)
+    //     return this.$message.error("请选择要分配的新角色");
+    //   const { data: res } = await this.$http.put(
+    //     `users/${this.userInfo.id}/role`,
+    //     {
+    //       rid: this.selectedRoleId,
+    //     }
+    //   );
+    //   if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
+    //   this.$message.success(res.meta.msg);
+    //   this.getUserList();
+    //   this.setRoleDialogVisible = false;
+    // },
+    async saveRoleInfo(){
+        if (!this.selectedRoleId)
+        return this.$message.error("请选择要分配的新角s色");
+      const { data: res } = await saveRoleInfos(this.userInfo.id,this.selectedRoleId)
+
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
       this.$message.success(res.meta.msg);
       this.getUserList();

@@ -93,6 +93,8 @@ export default {
         }
         this.$message.success("登陆成功");
         // 保存token
+        this.$store.commit("setRoutes", { path: "/aaa", compontent: "sss" });
+        window.sessionStorage.setItem('routes',JSON.stringify({ path: "/aaa", compontent: "sss" }))
         window.sessionStorage.setItem("token", res.data.token);
         this.$router.push("/home");
       });

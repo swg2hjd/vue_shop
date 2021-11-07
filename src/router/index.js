@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login'
 const Home = () => import('../views/Home')
+const Home2 = () => import('../views/Home2')
+const MyNotes = () => import('../views/Notes/MyNotes')
+const NotesExplain = () => import('../views/Notes/NotesExplain')
+const NotesSetting = () => import('../views/Notes/NotesSetting')
 const Welcome = () => import('../views/Welcome')
 const Users = () => import('../views/user/Users')
 const Rights = () => import('../views/power/Rights')
@@ -14,6 +18,7 @@ const Report = () => import('../views/report/Report')
 const TestTable = () => import('../views/testTable/TestTable')
 const TestTable2 = () => import('../views/testTable/TestTable2')
 const NavMenu = () => import('../views/NavMenu/NavMenu')
+const BaiDu = () => import('../views/iframe/BaiDu')
 
 
 Vue.use(VueRouter)
@@ -26,7 +31,7 @@ const routes = [
 
   {
     path: '/testtable',
-    component:TestTable
+    component: TestTable
   },
   {
     path: '/testtable2',
@@ -40,6 +45,25 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+
+  {
+    path: '/index',
+    component: Home2,
+    children: [
+      {
+        path: '/MyNotes',
+        component: MyNotes
+      },
+      {
+        path: '/NotesExplain',
+        component: NotesExplain
+      },
+      {
+        path: '/NotesSetting',
+        component: NotesSetting
+      }
+    ]
   },
 
   {
@@ -92,6 +116,11 @@ const routes = [
         path: '/reports',
         name: 'Report',
         component: Report
+      },
+      {
+        path: '/baidu',
+        name: 'BaiDu',
+        component: BaiDu
       }
     ]
   }

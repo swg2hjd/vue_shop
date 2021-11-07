@@ -7,7 +7,28 @@
 </template>
 
 <script>
-export default {};
+import { getUserLists } from "../http/api/api.js";
+export default {
+  data() {
+    return {
+      queryInfo: {
+        query: "",
+        pagenum: 1,
+        pagesize: 20,
+      },
+    };
+  },
+  methods: {
+    getUserList() {
+      getUserLists(this.queryInfo).then((res) => {
+        console.log(res);
+      });
+    },
+  },
+  mounted() {
+    this.getUserList();
+  },
+};
 </script>
 
 <style scoped>

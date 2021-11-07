@@ -1,4 +1,4 @@
-  import Vue from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -10,6 +10,8 @@ import TreeTable from 'vue-table-with-tree-grid'
 // 导入页面加载的进度条
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import Print from 'vue-print-nb'
+Vue.use(Print)
 Vue.prototype.$http = axios
 Vue.use(ElementUI)
 axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'

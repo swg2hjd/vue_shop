@@ -1,10 +1,32 @@
- html,
+html,
 body,
 #app {
-  height: 100%;
+  /* height: 100%; */
   margin: 0;
   padding: 0;
   min-width: 1366px;
+}
+
+/* 滑块宽度 */
+::-webkit-scrollbar {
+  /* background-color: #f78585; */
+  /* 竖滚动的尺寸 */
+  width: 3px;
+  /* 横滚动的尺寸 */
+  height: 3px;
+  /* display: none; */
+}
+
+/* 轨道背景色 */
+::-webkit-scrollbar-track {
+  /* background-color: #f5f5f5; */
+  background-color: f2b7b7;
+}
+
+/* 滑块颜色 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #555;
 }
 
 .el-breadcrumb {
